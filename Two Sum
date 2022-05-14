@@ -13,10 +13,11 @@ public:
         for(int i=0;i<nums.size();i++)  v.push_back({nums[i],i});
         //next we will sort the array as it will help to track correct index
         
-        sort(v.beign(),v.end());
+        sort(v.begin(),v.end());
         //now we will declare 2 pointers i and j
-        int i = 0, j=num.size()-1;
+        int i =0; int j=nums.size()-1;
         //we will declare 2 indexed which will help to store our 2 indexes
+        int idx1 = 0; int idx2 =0;
           while(i<j){
             
               if(v[i].first + v[j].first == target){
@@ -27,11 +28,12 @@ public:
               // less than target we wll do i++
                 if(v[i].first + v[j].first < target) i++;
               //greater value than target will do 
-                if(v[i].first + v[j].first > target j--;
+                if(v[i].first + v[j].first > target )j--;
      
                    }
-             return(idx1,idx2);
+             return{idx1,idx2};
     }
 };
                    
                    //time complexity o(nlogn)
+                   //space complexity -o(1)
